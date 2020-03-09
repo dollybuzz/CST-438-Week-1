@@ -1,0 +1,28 @@
+These notes were provided in the GettingStartedWithSpringBoot.pdf.
+
+Using H2 database instead of MySQL.
+
+Add the dependency shown below to the pom.xml file.
+
+<dependency>
+<groupId>com.h2database</groupId>
+<artifactId>h2</artifactId>
+<scope>runtime</scope>
+</dependency>
+
+Edit the application.properties file. Specify the following configuration.
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.url=jdbc:h2:mem:tempdb
+
+This will use a in memory H2 database. The database is temporary and will be recreated every time the
+spring server is started and deleted when the server is terminated.
+To use a persistent database change the url line to
+spring.datasource.url=jdbc:h2:~/testdb
+The database will create or use the existing file “testdb” in the user’s home directory. H2 runs as an
+embedded database as part of the spring application. 
+
+To access the query console for H2
+• the spring server must be running.
+• From a browser enter the url “localhost:8080/h2-console”.
