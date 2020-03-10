@@ -36,6 +36,8 @@ public class Hello {	//local host:8080/hello?name=Dalia
 		{
 			return "person_form";
 		}
+		String currentTimeDate = new java.util.Date().toString();
+		person.setTimeDate(currentTimeDate);
 		personRepository.save(person);
 		return "person_show";
 	}

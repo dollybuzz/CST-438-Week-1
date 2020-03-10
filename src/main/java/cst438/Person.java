@@ -25,14 +25,17 @@ public class Person {
 	@Size(min=3, max=25)
 	private String favoriteFood;
 	
+	private String timeDate;
+	
 	public Person() {}
 	
-	public Person(long id, String firstName, String lastName, String favoriteFood) {
+	public Person(long id, String firstName, String lastName, String favoriteFood, String timeDate) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.favoriteFood = favoriteFood;
+		this.timeDate = timeDate;
 	}
 
 	public long getId() {
@@ -67,4 +70,11 @@ public class Person {
 		this.favoriteFood = favoriteFood;
 	}
 
+	public String getTimeDate() {
+		return timeDate;
+	}
+
+	public void setTimeDate(String timeDate) {
+		this.timeDate = timeDate;
+	}
 }
